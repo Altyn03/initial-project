@@ -1,14 +1,17 @@
-'use client';
-import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import styled from 'styled-components';
+const MainDiv = styled.main`
+  background-color: black;
+  padding: 20px;
+`;
 
 export default function Home() {
-  const t = useTranslations('HomePage');
+  // const t = useTranslations('HomePage');
 
   return (
-    <main>
-      <h1>{t('title')}</h1>
-      <Link href='/login'>{t('login')}</Link>
-    </main>
+    <MainDiv>
+      asd
+      {/* <h1>{t('title')}</h1> */}
+      {/* <Link href='/login'>{t('login')}</Link> */}
+    </MainDiv>
   );
 }

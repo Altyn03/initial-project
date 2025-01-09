@@ -1,10 +1,11 @@
+import { GlobalStyles } from '@/app/lib/GlobalStyles';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Montserrat } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import './globals.css';
+import StyledComponentsRegistry from '../lib/registry';
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600'],
@@ -32,7 +33,8 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={translations}>
-          {children}
+          <GlobalStyles />
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </NextIntlClientProvider>
       </body>
     </html>
